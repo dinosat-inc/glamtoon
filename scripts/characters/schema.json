@@ -1,0 +1,48 @@
+{
+  "_": "Trait vocabulary the collection ships: every value contracts/test/fixtures/traits.csv may hold, as read from the finished art. encode-traits.mjs refuses a table with any value not listed here. It is not the generator's vocabulary: scripts/characters/glamtoon_traits.py also writes labels that are not here, such as Hair Value, finer age bands and named cuts. Hair Colour keeps None as the value a character with no hair carries; the contract does not emit an attribute whose value is None. Bit widths carry headroom and the record is exactly 16 bits. Regenerate the sources after any change: node scripts/characters/encode-traits.mjs",
+  "imageCount": 10000,
+  "imagesPerChunk": 5000,
+  "nameSlot": 32,
+  "firstImageId": 0,
+  "description": "A Glamtoon character. 10,000 portraits, ages 18 to 70, in two inks.",
+  "categories": [
+    {
+      "name": "Dress Code",
+      "bits": 4,
+      "values": [
+        "Feminine",
+        "Masculine",
+        "Crossed",
+        "Neutral"
+      ]
+    },
+    {
+      "name": "Age",
+      "bits": 4,
+      "values": [
+        "18-25",
+        "26-40",
+        "41-70"
+      ]
+    },
+    {
+      "name": "Hair Cut",
+      "bits": 4,
+      "values": [
+        "Short",
+        "Medium",
+        "Long"
+      ]
+    },
+    {
+      "name": "Hair Colour",
+      "bits": 4,
+      "values": [
+        "None",
+        "Light",
+        "Medium",
+        "Dark"
+      ]
+    }
+  ]
+}

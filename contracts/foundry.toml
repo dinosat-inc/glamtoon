@@ -1,0 +1,90 @@
+# Glamtoon character collection. Immutable, ownerless, no proxy.
+# Built on OpenZeppelin v5 because it is the most reviewable audited ERC-721:
+# no assembly in the token core, and any auditor reads it cold.
+[profile.default]
+solc_version = "0.8.37"
+evm_version = "prague"
+
+optimizer = true
+optimizer_runs = 200
+
+via_ir = true
+
+# Two suites read files outside this directory: the art's own metadata for the
+# provenance suite, and PROVENANCE.md. Read only, and tests only.
+fs_permissions = [
+  { access = "read", path = "./" },
+  { access = "read", path = "../PROVENANCE.md" },
+  { access = "read", path = "../metadata" },
+]
+
+remappings = [
+  "openzeppelin/=lib/openzeppelin-contracts/contracts/",
+  "forge-std/=lib/forge-std/src/",
+]
+
+# The DinoSAT proofs in test/dinosat are symbolic first. Their test_check_
+# functions narrow their inputs with vm.assume, which a fuzzer mostly rejects,
+# so a plain forge test leaves the directory alone, as it leaves test/halmos
+# alone by its check_ prefix. halmos runs them under the dinosat profile, and
+# their fuzz passes name the directory and override this on the command line.
+no_match_path = "test/dinosat/**"
+
+# Two lint notes are switched off because each one is a decision, not an
+# oversight. Left on, they bury anything that turns up later. Everything else,
+# including SCREAMING_SNAKE_CASE on immutables, is enforced.
+[lint]
+exclude_lints = [
+  # keccak256 over a bytes constant, in the generated data contracts. The
+  # assembly form is cheaper, and src and script have no assembly in them,
+  # which is worth more than the gas on a view.
+  "asm-keccak256",
+  # tokenJSON pairs with ERC721's tokenURI and reads worse as tokenJson, and the
+  # symbolic tests must be named check_snake_case for halmos to find them.
+  "mixed-case-function",
+]
+
+# Handler driven invariant campaigns. The handlers catch every revert they
+# expect, so any other revert fails the run. Kept modest so forge test stays
+# fast. Raise runs and depth for a deep sweep.
+[profile.default.invariant]
+runs = 64
+depth = 128
+fail_on_revert = true
+
+# Verification goes to Optimistic Etherscan. Ethereum is not listed because the
+# deploy script refuses chain 1.
+[etherscan]
+optimism = { key = "${ETHERSCAN_API_KEY}", chain = 10 }
+
+# halmos symbolic profile, test-only, never used for deployment builds.
+# cancun because the reentrancy guard uses transient storage; its own out and
+# cache so this optimizer-off build can never poison the deploy build cache
+[profile.halmos]
+src = "src"
+test = "test/halmos"
+out = "out-halmos"
+cache_path = "cache-halmos"
+libs = ["lib"]
+optimizer = false
+evm_version = "cancun"
+ast = true
+# Forge 1.8 turns this on by default and rewrites every `new` in a test into a
+# deployCode cheat code, which halmos does not support, so every setUp fails.
+dynamic_test_linking = false
+
+# DinoSAT formal verification profile, test-only, never used for deployment
+# builds. The existing halmos profile points at test/halmos, so the DinoSAT
+# suite in test/dinosat gets a profile of its own rather than changing that one.
+# cancun, its own out and cache, and no dynamic test linking, for the reasons
+# given on the halmos profile above.
+[profile.dinosat]
+src = "src"
+test = "test/dinosat"
+out = "out-dinosat"
+cache_path = "cache-dinosat"
+libs = ["lib"]
+optimizer = false
+evm_version = "cancun"
+ast = true
+dynamic_test_linking = false

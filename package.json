@@ -1,0 +1,20 @@
+{
+  "name": "glamtoon",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "description": "Glamtoon: ten thousand character portraits, issued in two editions, on OP Mainnet",
+  "scripts": {
+    "traits": "node scripts/characters/encode-traits.mjs",
+    "traits:fixture": "node scripts/characters/encode-traits.mjs --fixture",
+    "traits:check": "node scripts/characters/encode-traits.mjs --check",
+    "build": "forge build --root contracts",
+    "test": "forge test --root contracts",
+    "test:symbolic": "cd contracts && FOUNDRY_PROFILE=halmos halmos --function check_ --forge-build-out out-halmos --solver-timeout-assertion 240000",
+    "fmt": "forge fmt --root contracts"
+  },
+  "dependencies": {
+    "viem": "^2.55.10"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "imageCount": 10000,
+  "stride": 2,
+  "nameSlot": 32,
+  "chunkCount": 2,
+  "imagesPerChunk": 5000,
+  "categories": [
+    {
+      "name": "Dress Code",
+      "bits": 4,
+      "shift": 12,
+      "mask": 15,
+      "valueBase": 4,
+      "values": [
+        "Feminine",
+        "Masculine",
+        "Crossed",
+        "Neutral"
+      ]
+    },
+    {
+      "name": "Age",
+      "bits": 4,
+      "shift": 8,
+      "mask": 15,
+      "valueBase": 20,
+      "values": [
+        "18-25",
+        "26-40",
+        "41-70"
+      ]
+    },
+    {
+      "name": "Hair Cut",
+      "bits": 4,
+      "shift": 4,
+      "mask": 15,
+      "valueBase": 36,
+      "values": [
+        "Short",
+        "Medium",
+        "Long"
+      ]
+    },
+    {
+      "name": "Hair Colour",
+      "bits": 4,
+      "shift": 0,
+      "mask": 15,
+      "valueBase": 52,
+      "values": [
+        "None",
+        "Light",
+        "Medium",
+        "Dark"
+      ]
+    }
+  ]
+}

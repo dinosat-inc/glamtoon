@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+*.log
+.env
+.env.production
+
+# forge build output and caches. Each profile keeps its own so the optimizer
+# off symbolic builds can never poison the deploy build.
+contracts/out/
+contracts/out-halmos/
+contracts/cache/
+contracts/cache-halmos/
+contracts/out-dinosat/
+contracts/cache-dinosat/
+contracts/broadcast/
+
+# The art, fetched back from Arweave as PROVENANCE.md describes, and the CAR
+# packed from it: tens of gigabytes that live on IPFS and Arweave, not in git.
+/glamtoon/
+*.car

@@ -1,0 +1,23 @@
+{
+ "name": "Glamtoon #9924",
+ "description": "A Glamtoon character. 10,000 portraits, ages 18 to 70, in two inks.",
+ "image": "ipfs://bafybeide2rqgoymdal3bhump5imrmladdo73umdro4ezbswmvnuprvqdeu/blue/9924.png",
+ "attributes": [
+  {
+   "trait_type": "Dress Code",
+   "value": "Neutral"
+  },
+  {
+   "trait_type": "Age",
+   "value": "18-25"
+  },
+  {
+   "trait_type": "Hair Cut",
+   "value": "Medium"
+  },
+  {
+   "trait_type": "Hair Colour",
+   "value": "Light"
+  }
+ ]
+}

@@ -1,0 +1,285 @@
+DinoSAT raw results -- Glamtoon -- 2026-10-11
+halmos 0.3.3, z3 4.12.6, --solver-timeout-assertion 30000; forge 1.8.4
+one line per proof: final status, then exactly what halmos and forge reported
+
+PriceLemmasTest (test/dinosat/PriceLemmas.t.sol)
+  [PROVEN] test_check_lemma_payment_splits_exactly(uint256,uint256) | halmos [PASS] paths: 4, time: 5.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 2714 (rejected inputs)
+  [PROVEN] test_check_lemma_price_monotonic(uint256,uint256) | halmos [PASS] paths: 4, time: 1.91s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6146 (rejected inputs)
+  [PROVEN] test_check_lemma_price_steps_only_at_tier_boundary(uint256) | halmos [PASS] paths: 7, time: 2.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 30310 (rejected inputs)
+  [PROVEN] test_check_lemma_price_within_bounds(uint256) | halmos [PASS] paths: 3, time: 0.85s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 30667 (rejected inputs)
+  [PROVEN] test_check_lemma_sellout_revenue_is_250_ether() | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_lemma_tier_index_bounded(uint256) | halmos [PASS] paths: 2, time: 0.32s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 30667 (rejected inputs)
+  [PROVEN] test_check_theorem_price_tier0(uint256) | halmos [PASS] paths: 3, time: 0.85s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 15197 (rejected inputs)
+  [PROVEN] test_check_theorem_price_tier1(uint256) | halmos [PASS] paths: 3, time: 0.85s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 4365 (rejected inputs)
+  [PROVEN] test_check_theorem_price_tier2(uint256) | halmos [PASS] paths: 3, time: 0.85s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 4043 (rejected inputs)
+  [PROVEN] test_check_theorem_price_tier3(uint256) | halmos [PASS] paths: 3, time: 0.85s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 597 (rejected inputs)
+
+BitmapLemmasTest (test/dinosat/BitmapLemmas.t.sol)
+  [PROVEN] test_check_lemma_bit_is_single_and_nonzero(uint256) | halmos [PASS] paths: 3, time: 0.12s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_bitmap_capacity_is_tight() | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_lemma_positions_are_injective(uint256,uint256) | halmos [PASS] paths: 4, time: 0.12s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_setting_a_bit_keeps_the_rest(uint256,uint256) | halmos [PASS] paths: 4, time: 0.13s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_shift_and_mask_are_div_and_mod(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_word_index_in_bitmap(uint256) | halmos [PASS] paths: 1, time: 0.00s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 30681 (rejected inputs)
+  [PROVEN] test_check_lemma_word_range_guard_is_exact(uint256,uint256) | halmos [PASS] paths: 7, time: 0.13s | pass 2 [Success] runs: 100000
+
+TraitSchemaLemmasTest (test/dinosat/TraitSchemaLemmas.t.sol)
+  [PROVEN] test_check_lemma_chunk_index_is_zero_or_one(uint256) | halmos [PASS] paths: 3, time: 0.43s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 31157 (rejected inputs)
+  [PROVEN] test_check_lemma_fields_rebuild_the_record(uint256) | halmos [PASS] paths: 1, time: 0.00s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 33187 (rejected inputs)
+  [PROVEN] test_check_lemma_layout_constants_agree() | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_lemma_name_slots_stay_in_table(uint40) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_record_offset_in_bounds_chunk0(uint256) | halmos [PASS] paths: 1, time: 0.00s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 24082 (rejected inputs)
+  [PROVEN] test_check_lemma_record_offset_in_bounds_chunk1(uint256) | halmos [PASS] paths: 1, time: 0.00s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 3674 (rejected inputs)
+  [PROVEN] test_check_lemma_trait_values_fit_their_type(uint40) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+
+PackingLemmasTest (test/dinosat/PackingLemmas.t.sol)
+  [PROVEN] test_check_lemma_blue_iff_generation_zero(uint256,uint256) | halmos [PASS] paths: 2, time: 0.43s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 26741 (rejected inputs)
+  [PROVEN] test_check_lemma_decode_image_in_range(uint256) | halmos [PASS] paths: 2, time: 0.84s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_lemma_decode_recomposes(uint256) | halmos [PASS] paths: 3, time: 13.68s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 48025 (rejected inputs)
+  [PROVEN] test_check_lemma_id_rises_with_generation(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 4, time: 1.90s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 11735 (rejected inputs)
+  [PROVEN] test_check_lemma_round_trip(uint256,uint256) | halmos [PASS] paths: 3, time: 8.79s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14593 (rejected inputs)
+  [PROVEN] test_check_lemma_same_generation_keeps_characters_apart(uint256,uint256,uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_theorem_no_collision(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 4, time: 8.15s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 5523 (rejected inputs)
+
+RoyaltyLemmasTest (test/dinosat/RoyaltyLemmas.t.sol)
+  [FUZZ] test_check_lemma_royalty_floor_identity(uint256) | halmos [TIMEOUT] paths: 6, time: 60.37s (earlier run: [TIMEOUT] 30.31s) | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 90719 (rejected inputs)
+  [FUZZ] test_check_lemma_royalty_is_one_fiftieth(uint256) | halmos [TIMEOUT] paths: 3, time: 60.15s (earlier run: [TIMEOUT] 30.06s) | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 90719 (rejected inputs)
+  [FUZZ] test_check_lemma_royalty_monotonic(uint256,uint256) | halmos [TIMEOUT] paths: 4, time: 60.17s (earlier run: [TIMEOUT] 30.13s) | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 16502 (rejected inputs)
+  [PROVEN] test_check_lemma_royalty_never_exceeds_price(uint256) | halmos [PASS] paths: 3, time: 2.61s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 90719 (rejected inputs)
+  [PROVEN] test_check_lemma_royalty_product_fits(uint256) | halmos [PASS] paths: 3, time: 0.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 90719 (rejected inputs)
+  [PROVEN] test_check_lemma_royalty_rate_is_below_one() | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_lemma_royalty_rounds_to_zero_below_fifty_wei(uint256) | halmos [PASS] paths: 3, time: 2.71s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7390 (rejected inputs)
+
+GlamToonPriceSymbolicTest (test/dinosat/GlamToonPriceSymbolic.t.sol)
+  [PROVEN] test_check_a_sale_moves_the_price_along_the_schedule(uint256,uint256) | halmos [PASS] paths: 47, time: 14.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6867 (rejected inputs)
+  [PROVEN] test_check_currentPrice_follows_the_sales_counter(uint256) | halmos [PASS] paths: 10, time: 1.21s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_priceAt_matches_schedule(uint256) | halmos [PASS] paths: 9, time: 1.18s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21771 (rejected inputs)
+  [PROVEN] test_check_priceAt_refuses_once_sold_out(uint256) | halmos [PASS] paths: 1, time: 0.00s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_price_constants_match_the_lemmas() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+
+TreasuryAccessSymbolicTest (test/dinosat/TreasuryAccessSymbolic.t.sol)
+  [PROVEN] test_check_a_new_offer_replaces_the_old_one(address,address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_accepting_moves_the_key_and_clears_the_offer(address,address) | halmos [PASS] paths: 3, time: 0.02s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_an_offer_does_not_hand_over(address,address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_refuses_zero_addresses(address,address) | halmos [PASS] paths: 5, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_only_the_offered_account_can_accept(address,address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_owner_moves_the_beneficiary_but_not_to_nobody(address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_renouncing_is_always_refused(address) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_stranger_cannot_move_the_beneficiary(address,address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_stranger_cannot_offer_ownership(address,address) | halmos [PASS] paths: 3, time: 0.01s | pass 2 [Success] runs: 100000
+
+GlamToonOwnerLabelSymbolicTest (test/dinosat/GlamToonOwnerLabelSymbolic.t.sol)
+  [PROVEN] test_check_label_follows_a_two_step_handover(address) | halmos [PASS] paths: 2, time: 0.02s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_label_holder_cannot_mint_below_the_price(uint256,uint256,uint256) | halmos [PASS] paths: 29, time: 2.83s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 4446 (rejected inputs)
+  [PROVEN] test_check_label_holder_cannot_move_a_holders_token(uint256,address) | halmos [PASS] paths: 3, time: 0.09s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 22280 (rejected inputs)
+  [PROVEN] test_check_label_holder_cannot_redirect_a_withdraw(uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 96235 (rejected inputs)
+  [PROVEN] test_check_label_is_the_treasury_owner() | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] no inputs to fuzz, run once
+
+GlamToonOwnerDecodingSymbolicTest (test/dinosat/GlamToonOwnerDecodingSymbolic.t.sol)
+  [PROVEN] test_check_label_is_nobody_when_the_answer_is_empty() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_label_is_nobody_when_the_answer_is_long() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_label_is_nobody_when_the_answer_is_short() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_label_is_nobody_when_the_payee_reverts() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_label_reads_a_clean_address(uint256) | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_label_refuses_a_dirty_word(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Failure] runs: 31018 (rejected inputs)
+
+GlamToonTransferSymbolicTest (test/dinosat/GlamToonTransferSymbolic.t.sol)
+  [PROVEN] test_check_approval_alone_moves_nothing(address) | halmos [PASS] paths: 2, time: 0.01s (earlier run: [PASS] 0.01s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_approved_spender_moves_it_once(address,address) | halmos [PASS] paths: 3, time: 0.07s (earlier run: [PASS] 0.07s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_only_the_zero_address_escapes_the_owner_check(address,address) | halmos [PASS] paths: 4, time: 0.04s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_operator_approval_is_scoped_to_its_grantor(address,address) | halmos [PASS] paths: 4, time: 0.08s (earlier run: [PASS] 0.07s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_owner_moves_its_token(address) | halmos [PASS] paths: 3, time: 0.05s (earlier run: [PASS] 0.05s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_stranger_cannot_approve(address,address) | halmos [PASS] paths: 3, time: 0.02s (earlier run: [PASS] 0.01s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_stranger_cannot_move_a_token(address,address) | halmos [PASS] paths: 4, time: 0.09s (earlier run: [PASS] 0.04s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_transfer_changes_no_supply(address) | halmos [PASS] paths: 2, time: 0.03s (earlier run: [PASS] 0.08s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_transfer_to_nobody_is_refused() | halmos [PASS] paths: 1, time: 0.00s (earlier run: [PASS] 0.00s) | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_unminted_token_cannot_move(address,address,address,uint256) | halmos [PASS] paths: 5, time: 0.03s (earlier run: [PASS] 0.03s) | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_wrong_from_is_refused(address,address) | halmos [PASS] paths: 4, time: 0.03s (earlier run: [PASS] 0.03s) | pass 2 [Success] runs: 100000
+
+GlamToonWithdrawSymbolicTest (test/dinosat/GlamToonWithdrawSymbolic.t.sol)
+  [PROVEN] test_check_withdraw_leaves_the_collection_alone(address,uint256) | halmos [PASS] paths: 3, time: 0.18s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 96822 (rejected inputs)
+  [PROVEN] test_check_withdraw_moves_exactly_the_takings(uint256,uint256,uint256) | halmos [PASS] paths: 38, time: 3.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 612 (rejected inputs)
+  [PROVEN] test_check_withdraw_pays_only_the_treasury(address,uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 96813 (rejected inputs)
+  [PROVEN] test_check_withdraw_refuses_ether(address,uint256,uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 27796 (rejected inputs)
+  [PROVEN] test_check_withdraw_refuses_when_empty(address) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+
+TreasurySweepSymbolicTest (test/dinosat/TreasurySweepSymbolic.t.sol)
+  [PROVEN] test_check_sweep_follows_a_moved_beneficiary(address,uint256) | halmos [PASS] paths: 2, time: 0.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 56899 (rejected inputs)
+  [PROVEN] test_check_sweep_pays_only_the_beneficiary(address,uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 88346 (rejected inputs)
+  [PROVEN] test_check_sweep_refuses_ether(address,uint256,uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 27736 (rejected inputs)
+  [PROVEN] test_check_sweep_refuses_when_empty(address) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_treasury_accepts_ether_from_anyone(address,uint256,uint256) | halmos [PASS] paths: 3, time: 0.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28682 (rejected inputs)
+
+TreasuryTokenSweepSymbolicTest (test/dinosat/TreasuryTokenSweepSymbolic.t.sol)
+  [PROVEN] test_check_the_two_sweeps_do_not_touch_each_other(uint256,uint256) | halmos [PASS] paths: 2, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 39135 (rejected inputs)
+  [PROVEN] test_check_token_sweep_follows_a_moved_beneficiary(address,uint256) | halmos [PASS] paths: 2, time: 0.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 81532 (rejected inputs)
+  [PROVEN] test_check_token_sweep_handles_a_token_that_returns_nothing(uint256) | halmos [PASS] paths: 1, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 97695 (rejected inputs)
+  [PROVEN] test_check_token_sweep_pays_only_the_beneficiary(address,uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 88960 (rejected inputs)
+  [PROVEN] test_check_token_sweep_refuses_a_token_that_answers_false(uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 97695 (rejected inputs)
+  [PROVEN] test_check_token_sweep_refuses_when_empty(address) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+
+GlamToonReentrancySymbolicTest (test/dinosat/GlamToonReentrancySymbolic.t.sol)
+  [PROVEN] test_check_green_reentry_from_a_blue_sale_is_refused(uint256,uint256) | halmos [PASS] paths: 2, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7051 (rejected inputs)
+  [PROVEN] test_check_green_reentry_from_the_hook_is_refused(uint256,uint256) | halmos [PASS] paths: 1, time: 0.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6961 (rejected inputs)
+  [PROVEN] test_check_minter_without_a_hook_spends_nothing(uint256) | halmos [PASS] paths: 1, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 22093 (rejected inputs)
+  [PROVEN] test_check_unreturnable_change_refuses_the_sale(uint256,uint256) | halmos [PASS] paths: 3, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14335 (rejected inputs)
+  [PROVEN] test_check_withdraw_reentry_from_the_refund_is_refused(uint256,uint256) | halmos [PASS] paths: 3, time: 0.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14083 (rejected inputs)
+
+GlamToonDeploymentSymbolicTest (test/dinosat/GlamToonDeploymentSymbolic.t.sol)
+  [PROVEN] test_check_constructor_forwards_its_seed_to_the_payee(uint256) | halmos [PASS] paths: 2, time: 0.12s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_pins_what_it_was_given(uint64) | halmos [PASS] paths: 2, time: 0.14s | pass 2 [Failure] runs: 63982 (rejected inputs)
+  [PROVEN] test_check_constructor_refuses_a_chunk_it_cannot_read() | halmos [PASS] paths: 1, time: 0.12s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_constructor_refuses_a_wrong_chunk0_hash(bytes32) | halmos [PASS] paths: 1, time: 0.06s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_refuses_a_wrong_chunk1_hash(bytes32) | halmos [PASS] paths: 1, time: 0.05s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_refuses_a_wrong_names_hash(bytes32) | halmos [PASS] paths: 1, time: 0.10s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_refuses_a_zero_payee(uint64) | halmos [PASS] paths: 2, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_constructor_refuses_swapped_chunks() | halmos [PASS] paths: 1, time: 0.05s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_constructor_start_window(uint64,uint64) | halmos [PASS] paths: 4, time: 0.12s | pass 2 [Success] runs: 100000
+
+GlamToonGreenSymbolicTest (test/dinosat/GlamToonGreenSymbolic.t.sol)
+  [PROVEN] test_check_claim_survives_giving_the_token_away(address,address,uint256) | halmos [PASS] paths: 4, time: 0.18s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 12716 (rejected inputs)
+  [PROVEN] test_check_claims_are_per_character(address,uint256,uint256) | halmos [PASS] paths: 2, time: 0.07s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 3949 (rejected inputs)
+  [PROVEN] test_check_first_green_is_generation_one(address,uint256) | halmos [PASS] paths: 2, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14129 (rejected inputs)
+  [PROVEN] test_check_generations_are_issued_in_order(address,address,uint256) | halmos [PASS] paths: 3, time: 0.07s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 9615 (rejected inputs)
+  [PROVEN] test_check_green_is_free_and_refuses_ether(address,uint256,uint256) | halmos [PASS] paths: 2, time: 0.08s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 8743 (rejected inputs)
+  [PROVEN] test_check_green_never_lands_on_a_blue_id(address,uint256) | halmos [PASS] paths: 2, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14129 (rejected inputs)
+  [PROVEN] test_check_green_refuses_an_unknown_character(address,uint256) | halmos [PASS] paths: 3, time: 0.15s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_green_refuses_before_the_sale_opens(uint256,address,uint256) | halmos [PASS] paths: 2, time: 0.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7735 (rejected inputs)
+  [PROVEN] test_check_green_stays_open_after_blue_sells_out(address,uint256,uint256) | halmos [PASS] paths: 3, time: 0.15s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 4315 (rejected inputs)
+  [PROVEN] test_check_one_green_per_address_per_character(address,uint256) | halmos [PASS] paths: 2, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 13994 (rejected inputs)
+
+GlamToonGiftSymbolicTest (test/dinosat/GlamToonGiftSymbolic.t.sol)
+  [PROVEN] test_check_gift_cannot_take_a_sold_character(address,uint256,uint256) | halmos [PASS] paths: 3, time: 0.15s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14080 (rejected inputs)
+  [PROVEN] test_check_gift_reaches_any_account(address,uint256) | halmos [PASS] paths: 2, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14849 (rejected inputs)
+  [PROVEN] test_check_gift_sends_token_and_change_apart(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 41, time: 20.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 250 (rejected inputs)
+  [PROVEN] test_check_gift_settles_exactly_when_every_guard_passes(uint256,uint256,uint256,uint256,uint256) | halmos [PASS] paths: 91, time: 9.14s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 29824 (rejected inputs)
+  [PROVEN] test_check_gift_to_nobody_is_refused(uint256,uint256,uint256) | halmos [PASS] paths: 4, time: 0.13s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14241 (rejected inputs)
+
+GlamToonBlueSaleSymbolicTest (test/dinosat/GlamToonBlueSaleSymbolic.t.sol)
+  [PROVEN] test_check_any_account_can_buy(address,uint256) | halmos [PASS] paths: 2, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 14745 (rejected inputs)
+  [PROVEN] test_check_buyer_pays_exactly_the_price(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 40, time: 10.40s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 248 (rejected inputs)
+  [PROVEN] test_check_exact_payment_leaves_no_change(uint256,uint256) | halmos [PASS] paths: 23, time: 2.90s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6682 (rejected inputs)
+  [PROVEN] test_check_sale_leaves_green_alone(uint256) | halmos [PASS] paths: 2, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21742 (rejected inputs)
+  [PROVEN] test_check_sale_records_owner_supply_and_bit(uint256,uint256) | halmos [PASS] paths: 23, time: 2.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6682 (rejected inputs)
+  [PROVEN] test_check_sale_sets_only_its_own_bit(uint256,uint256) | halmos [PASS] paths: 1, time: 0.02s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 1457 (rejected inputs)
+  [PROVEN] test_check_two_characters_sell_independently(uint256,uint256) | halmos [PASS] paths: 2, time: 0.15s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6589 (rejected inputs)
+
+GlamToonBlueGuardsSymbolicTest (test/dinosat/GlamToonBlueGuardsSymbolic.t.sol)
+  [PROVEN] test_check_refusal_reason_follows_the_guard_order(uint256,uint256,uint256,uint256,uint256,bool) | halmos [PASS] paths: 82, time: 9.73s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 30360 (rejected inputs)
+  [PROVEN] test_check_refuses_a_price_above_the_ceiling(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 32, time: 3.29s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 3282 (rejected inputs)
+  [PROVEN] test_check_refuses_a_second_sale(address,uint256,uint256,uint256) | halmos [PASS] paths: 2, time: 0.10s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 9369 (rejected inputs)
+  [PROVEN] test_check_refuses_an_unknown_character(uint256,uint256,uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 50729 (rejected inputs)
+  [PROVEN] test_check_refuses_before_the_sale_opens(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6717 (rejected inputs)
+  [PROVEN] test_check_refuses_underpayment(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 31, time: 3.38s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 1364 (rejected inputs)
+  [PROVEN] test_check_refuses_when_sold_out(uint256,uint256,uint256,uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7652 (rejected inputs)
+  [PROVEN] test_check_settles_exactly_when_every_guard_passes(uint256,uint256,uint256,uint256,uint256) | halmos [PASS] paths: 91, time: 10.55s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 29757 (rejected inputs)
+
+SystemFlowSymbolicTest (test/dinosat/SystemFlowSymbolic.t.sol)
+  [PROVEN] test_check_a_deployment_seed_reaches_the_beneficiary(uint256) | halmos [PASS] paths: 1, time: 0.24s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 98536 (rejected inputs)
+  [PROVEN] test_check_a_moved_beneficiary_receives_the_next_takings(address,uint256) | halmos [PASS] paths: 2, time: 0.07s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 12033 (rejected inputs)
+  [PROVEN] test_check_sale_proceeds_reach_the_beneficiary(uint256,uint256,uint256,address,address) | halmos [PASS] paths: 39, time: 3.10s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 246 (rejected inputs)
+  [PROVEN] test_check_system_ether_is_conserved(uint256,uint256,uint256) | halmos [PASS] paths: 28, time: 9.64s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 661 (rejected inputs)
+  [PROVEN] test_check_treasury_owner_gains_nothing_by_pushing(uint256,uint256) | halmos [PASS] paths: 25, time: 3.03s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6997 (rejected inputs)
+
+GlamToonViewGuardsSymbolicTest (test/dinosat/GlamToonViewGuardsSymbolic.t.sol)
+  [PROVEN] test_check_blueTakenBits_answers_inside_0words(uint256) | halmos [PASS] paths: 1, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6447 (rejected inputs)
+  [PROVEN] test_check_blueTakenBits_answers_inside_1word(uint256) | halmos [PASS] paths: 2, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 6224 (rejected inputs)
+  [PROVEN] test_check_blueTakenBits_answers_inside_40words() | halmos [PASS] paths: 1, time: 0.03s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_blueTakenBits_refuses_a_range_outside(uint256,uint256) | halmos [PASS] paths: 2, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_blueTaken_answers_inside_and_refuses_outside(uint256) | halmos [PASS] paths: 2, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_green_batch_readers_answer_empty_outside(uint256,address) | halmos [PASS] paths: 2, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_tokenIdFor_refuses_an_unknown_character(uint256,uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_traitChunk_refuses_an_unknown_chunk(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_trait_readers_refuse_an_unknown_character(uint256) | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_valueNames_refuses_an_unknown_category(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+
+GlamToonRoyaltySymbolicTest (test/dinosat/GlamToonRoyaltySymbolic.t.sol)
+  [PROVEN] test_check_royalty_always_answers_in_range(uint256,uint256) | halmos [PASS] paths: 3, time: 36.43s (earlier run: [TIMEOUT] 30.09s) | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 72352 (rejected inputs)
+  [PROVEN] test_check_royalty_is_the_same_for_every_token(uint256,uint256,uint256) | halmos [PASS] paths: 2, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 72154 (rejected inputs)
+  [PROVEN] test_check_royalty_is_two_percent_to_the_treasury(uint256,uint256) | halmos [PASS] paths: 2, time: 0.01s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 72352 (rejected inputs)
+  [PROVEN] test_check_royalty_is_untouched_by_the_sale(uint256,uint256) | halmos [PASS] paths: 1, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 22139 (rejected inputs)
+  [PROVEN] test_check_royalty_refuses_a_price_that_would_overflow(uint256,uint256) | halmos [PASS] paths: 2, time: 13.52s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 8183 (rejected inputs)
+  [PROVEN] test_check_supported_interfaces_are_exactly_four(bytes4) | halmos [PASS] paths: 6, time: 0.01s | pass 2 [Success] runs: 100000
+
+TreasuryAnyCallSymbolicTest (test/dinosat/TreasuryAnyCallSymbolic.t.sol)
+  [PROVEN] test_check_stranger_changes_nothing_acceptOwnership(address,uint256) | halmos [PASS] paths: 3, time: 0.07s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55143 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_anySelector(address,uint256,bytes4) | halmos [PASS] paths: 21, time: 0.35s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55466 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_plainEther(address,uint256) | halmos [PASS] paths: 2, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55143 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_renounceOwnership(address,uint256) | halmos [PASS] paths: 3, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55483 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_setBeneficiary(address,uint256,address) | halmos [PASS] paths: 4, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55200 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_sweep(address,uint256) | halmos [PASS] paths: 3, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55143 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_sweepToken(address,uint256,address) | halmos [PASS] paths: 6, time: 0.09s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 43877 (rejected inputs)
+  [PROVEN] test_check_stranger_changes_nothing_transferOwnership(address,uint256,address) | halmos [PASS] paths: 4, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 55200 (rejected inputs)
+
+GlamToonHistorySymbolicTest (test/dinosat/GlamToonHistorySymbolic.t.sol)
+  [PROVEN] test_check_history_survives_anySelector(address,bytes4) | halmos [PASS] paths: 68, time: 1.59s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_approve(address,address,uint256) | halmos [PASS] paths: 7, time: 0.14s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_mintBlue(address,uint256,uint256) | halmos [PASS] paths: 5, time: 0.15s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_mintBlueFor(address,address,uint256) | halmos [PASS] paths: 8, time: 0.29s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_mintGreen(address,uint256) | halmos [PASS] paths: 5, time: 0.16s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_plainEther(address) | halmos [PASS] paths: 4, time: 0.08s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_safeTransferFrom(address,address,address,uint256) | halmos [PASS] paths: 8, time: 0.24s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_safeTransferFromWithData(address,address,address,uint256) | halmos [PASS] paths: 9, time: 0.30s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_setApprovalForAll(address,address,bool) | halmos [PASS] paths: 5, time: 0.08s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_transferFrom(address,address,address,uint256) | halmos [PASS] paths: 8, time: 0.21s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_history_survives_withdraw(address) | halmos [PASS] paths: 4, time: 0.09s | pass 2 [Success] runs: 100000
+
+GlamToonEtherFlowSymbolicTest (test/dinosat/GlamToonEtherFlowSymbolic.t.sol)
+  [PROVEN] test_check_ether_stays_put_anySelector(address,uint256,uint256,bytes4) | halmos [PASS] paths: 133, time: 1.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28809 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_approve(address,uint256,uint256,address,uint256) | halmos [PASS] paths: 7, time: 0.08s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28639 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_mintBlue(address,uint256,uint256,uint256,uint256) | halmos [PASS] paths: 10, time: 0.14s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28603 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_mintBlueFor(address,uint256,uint256,address,uint256) | halmos [PASS] paths: 15, time: 0.21s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 23269 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_mintGreen(address,uint256,uint256,uint256) | halmos [PASS] paths: 7, time: 0.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 29117 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_plainEther(address,uint256,uint256) | halmos [PASS] paths: 3, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28869 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_safeTransferFrom(address,uint256,uint256,address,uint256) | halmos [PASS] paths: 10, time: 0.16s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 23117 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_safeTransferFromWithData(address,uint256,uint256,address,uint256) | halmos [PASS] paths: 10, time: 0.16s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 23283 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_setApprovalForAll(address,uint256,uint256,address,bool) | halmos [PASS] paths: 7, time: 0.07s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28654 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_transferFrom(address,uint256,uint256,address,uint256) | halmos [PASS] paths: 8, time: 0.12s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28762 (rejected inputs)
+  [PROVEN] test_check_ether_stays_put_withdraw(address,uint256,uint256) | halmos [PASS] paths: 5, time: 0.06s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 28879 (rejected inputs)
+
+TraitDataSymbolicTest (test/dinosat/TraitDataSymbolic.t.sol)
+  [PROVEN] test_check_chunk0_refuses_characters_outside(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_chunk1_refuses_characters_outside(uint256) | halmos [PASS] paths: 2, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_data_matches_the_schema() | halmos [PASS] paths: 1, time: 0.12s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_names_refuse_a_slot_outside(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [FUZZ] test_check_token_reads_the_right_record(uint256) | halmos [ERROR] paths: 4, time: 0.04s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21764 (rejected inputs)
+  [PROVEN] test_check_token_reads_the_right_record_0() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_reads_the_right_record_4999() | halmos [PASS] paths: 1, time: 0.07s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_reads_the_right_record_5000() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_reads_the_right_record_9999() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [FUZZ] test_check_traits_are_the_fields_of_the_record(uint256) | halmos [ERROR] paths: 6, time: 0.05s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21764 (rejected inputs)
+
+GlamToonMetadataSymbolicTest (test/dinosat/GlamToonMetadataSymbolic.t.sol)
+  [FUZZ] test_check_art_addresses_have_the_right_shape(uint256,bool) | halmos [ERROR] paths: 132, time: 7.67s, exploration bounded | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 22095 (rejected inputs)
+  [PROVEN] test_check_art_addresses_refuse_an_unknown_character(uint256,bool) | halmos [PASS] paths: 2, time: 0.01s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_collection_metadata_is_fixed() | halmos [PASS] paths: 1, time: 0.07s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_tokenURI_refuses_an_unminted_token(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [FUZZ] test_check_tokenURI_wraps_the_json(uint256) | halmos [no result] stopped by a 120 s wall clock cap during path exploration | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21870 (rejected inputs)
+  [PROVEN] test_check_token_json_answers_0() | halmos [PASS] paths: 1, time: 0.05s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_json_answers_10000() | halmos [PASS] paths: 1, time: 0.03s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_json_answers_19999() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_json_answers_90000() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_token_json_answers_9999() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [FUZZ] test_check_token_json_answers_for_every_id(uint256) | halmos [no result] stopped by a 120 s wall clock cap during path exploration | fuzz wrapper [Success] runs: 1000000 | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_token_json_answers_max() | halmos [PASS] paths: 1, time: 0.03s | pass 2 [Success] no inputs to fuzz, run once
+
+GlamToonPackingSymbolicTest (test/dinosat/GlamToonPackingSymbolic.t.sol)
+  [PROVEN] test_check_a_blue_id_is_the_character_number(uint256) | halmos [PASS] paths: 3, time: 0.36s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 21831 (rejected inputs)
+  [PROVEN] test_check_decode_always_names_a_real_character(uint256) | halmos [PASS] paths: 2, time: 0.87s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_decode_inverts_tokenIdFor(uint256,uint256) | halmos [PASS] paths: 3, time: 8.68s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7623 (rejected inputs)
+  [PROVEN] test_check_isBlue_is_the_first_ten_thousand_ids(uint256) | halmos [PASS] paths: 1, time: 0.00s | pass 2 [Success] runs: 100000
+  [PROVEN] test_check_tokenIdFor_answers_the_formula(uint256,uint256) | halmos [PASS] paths: 3, time: 11.25s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 7623 (rejected inputs)
+  [PROVEN] test_check_tokenIdFor_refuses_a_generation_that_would_overflow(uint256,uint256) | halmos [PASS] paths: 4, time: 6.50s | fuzz wrapper [Success] runs: 1000000 | pass 2 [Failure] runs: 3022 (rejected inputs)
+
+GlamToonTraitReadersSymbolicTest (test/dinosat/GlamToonTraitReadersSymbolic.t.sol)
+  [PROVEN] test_check_all_traits_is_both_chunks_in_order() | halmos [PASS] paths: 1, time: 0.39s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_category_names_are_the_first_slots() | halmos [PASS] paths: 1, time: 0.02s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_trait_chunk_is_the_data_contract_0() | halmos [PASS] paths: 1, time: 0.15s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_trait_chunk_is_the_data_contract_1() | halmos [PASS] paths: 1, time: 0.15s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_trait_names_is_the_name_table() | halmos [PASS] paths: 1, time: 0.01s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_value_names_are_the_category_table_0() | halmos [PASS] paths: 1, time: 0.12s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_value_names_are_the_category_table_1() | halmos [PASS] paths: 1, time: 0.06s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_value_names_are_the_category_table_2() | halmos [PASS] paths: 1, time: 0.06s | pass 2 [Success] no inputs to fuzz, run once
+  [PROVEN] test_check_value_names_are_the_category_table_3() | halmos [PASS] paths: 1, time: 0.06s | pass 2 [Success] no inputs to fuzz, run once
+
+TOTAL 222 proofs: 214 PROVEN, 8 FUZZ, 0 COUNTEREXAMPLE, 0 UNVERIFIED
